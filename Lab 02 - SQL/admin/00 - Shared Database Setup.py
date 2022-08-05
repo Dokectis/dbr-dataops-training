@@ -8,7 +8,9 @@
 # MAGIC %md
 # MAGIC ### Admin database setup
 # MAGIC 
-# MAGIC Running this notebook will set up a shared database to be used for AP Juice SQL Lab and grant access to the database to all users
+# MAGIC Running this notebook will set up a shared database **ap_juice_db_shared** to be used for AP Juice SQL Lab and grant access to the database to all users.
+# MAGIC 
+# MAGIC Users will need to be granted access to this database.
 
 # COMMAND ----------
 
@@ -62,6 +64,10 @@ spark.sql(f"USE {database_name};")
 # COMMAND ----------
 
 #%run ../Utils/Define-Functions
+username = database_name
+
+base_table_path = f"dbfs:/FileStore/{username}/deltademoasset/"
+local_data_path = f"/dbfs/FileStore/{username}/deltademoasset/"
 
 spark.sql(f"CREATE DATABASE IF NOT EXISTS {database_name}_aux")
 
@@ -103,8 +109,6 @@ and state = 'PENDING'
 
 # MAGIC %md
 # MAGIC ## ![ ](https://pages.databricks.com/rs/094-YMS-629/images/delta-lake-tiny-logo.png) Delta Architecture
-# MAGIC 
-# MAGIC <img src="https://delta.io/static/delta-hp-hero-wide-74fd699d8e96c4b511bd13c60d8ab348.png" width=1012/>
 
 # COMMAND ----------
 

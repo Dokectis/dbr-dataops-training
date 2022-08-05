@@ -1,18 +1,4 @@
 # Databricks notebook source
-# MAGIC %md
-# MAGIC 
-# MAGIC import os
-# MAGIC 
-# MAGIC full_path = os.getcwd()
-# MAGIC 
-# MAGIC while len(full_path)>1 :
-# MAGIC   full_path = os.path.split(full_path)[0]
-# MAGIC   if os.path.split(full_path)[1] == 'apjbootcamp2022':
-# MAGIC     break;
-# MAGIC print(full_path)
-
-# COMMAND ----------
-
 #%run ./Fetch-User-Metadata
 database_name = 'ap_juice_db_shared'
 username = 'ap_juice_db_shared'
